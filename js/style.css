@@ -1,0 +1,84 @@
+html,body,.main {
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80%;
+    height: 80%;
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: 0 9px 25px -5px #96b2b6;
+}
+
+.draw::after,.win-x::after,.win-o::after {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    background: #df954ccf;
+    color: #ffffff;
+    font-size: 21px;
+    width: 50%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.draw::after {
+    content: "It's a Draw!";
+}
+.win-x::after {
+    content: "Wins X!";
+}
+.win-o::after {
+    content: "Wins O!";
+}
+
+.tile {
+    position: relative;
+    background-color: #b4c8dc;
+    border: 1px solid #f1f5f9;
+    width: 100%;
+    height: 100%;
+}
+.fill-x::before {
+    content: "";
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 50px;
+    height: 3px;
+    transform: translateX(50%) rotate(45deg);
+}
+.fill-x::after {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 50px;
+    height: 3px;
+    transform: translateX(50%) rotate(-45deg);
+}
+.fill-o::after {
+    content: "";
+    border: 3px solid #ffffff;
+    border-radius: 1000px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 45px;
+    height: 45px;
+    transform: translate(50%, -50%);
+}
+
+.wintile {
+    background-color: #5c738a;
+}
